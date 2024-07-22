@@ -1,8 +1,6 @@
+/* eslint-env node */
 module.exports = {
   root: true,
-  env: {
-    node: true,
-  },
   "extends": [
     "eslint:recommended",
     "plugin:vue/base",
@@ -10,4 +8,7 @@ module.exports = {
     "plugin:vue/vue3-strongly-recommended",
     "plugin:vue/vue3-recommended"
 ],
+  parserOptions: {
+    ecmaVersion: 'latest'
+  }
 }

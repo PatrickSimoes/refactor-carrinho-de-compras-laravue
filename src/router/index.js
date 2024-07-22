@@ -1,17 +1,19 @@
-// Composables
 import { createRouter, createWebHistory } from 'vue-router'
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: () => import('@/views/BaseHome.vue'),
-  },
-]
-
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes,
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: () => import('@/views/Home/HomeView.vue')
+    },
+    {
+      path: '/carrinho',
+      name: 'carrinho',
+      component: () => import('@/views/Carrrinho/CarrinhoIndex.vue')
+    },
+  ]
 })
 
 export default router
